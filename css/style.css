@@ -1,0 +1,53 @@
+.container {
+	width: 60%;
+	min-width: 320px;
+	background-color: grey;
+	margin: auto;
+	border: solid 1px black;
+}
+
+.stream-menu {
+	width: 100%;
+}
+
+.stream-menu li {
+	display: inline-block;
+	width: 32.8%;
+	text-align: center;
+	background-color: white;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	height: 30px;
+}
+
+.stream-menu span {
+	margin-right: 5px;
+}
+
+.stream-stat {
+	background-color: white;
+}
+
+.on-icon {
+	color: #00ff33;
+}
+
+.off-icon {
+	color: #cc0000;
+}
+
+.stream-on, .stream-off {
+	border: 1px solid black;
+	padding: 10px;
+}
+
+.stream-icon {
+	height: 40px;
+	width: 40px;
+	border-radius: 50%;
+	margin-right: 10px;
+}
+
+.hide-it {
+	display: none;
+}
