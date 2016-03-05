@@ -67,6 +67,6 @@ function addStream(streamName){
 	getInfo(streamer);
 }
 
-$('.delete-stream').on('click', function(){
-	console.log('deleted');
+$('.delete-stream').click( function(){
+	console.log('delete');
 });
