@@ -15,7 +15,7 @@ function getInfo(streamName){
 		success: function(data){
 			console.log(data);
 			if (data.status === 404){
-				$offline.append('<div class="stream-off stream-stat"><img src="http://publicdomainvectors.org/photos/mono-gnome-question.png" class="stream-icon"><p class="name">' + streamName + '</p><div class="stream-info"><p class="stream-info">Does Not Exist</p></div></div>');
+				$offline.append('<div class="stream-off stream-stat"><img src="http://publicdomainvectors.org/photos/mono-gnome-question.png" class="stream-icon"><p class="name">' + streamName + '</p><span class="delete-stream fa fa-times"></span><div class="stream-info"><p class="stream-info">Does Not Exist</p></div></div>');
 			} else if (data.stream == null){
 				offlineCall(streamName);
 			} else {
@@ -67,6 +67,8 @@ function addStream(streamName){
 	getInfo(streamer);
 }
 
-$('.delete-stream').click( function(){
+$('.stream-container').delegate('.delete-stream', 'click', function(){
+	$(this).closest('.stream-stat').remove();
+
 	console.log('delete');
 });
