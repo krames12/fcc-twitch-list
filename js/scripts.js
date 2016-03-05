@@ -1,4 +1,4 @@
-var streamerList = ["asd123weqweqwewrqwerq", "freecodecamp", "storbeck", "habathcx","RobotCaleb", "noobs2ninjas", "Slootbag", "JoshOG"];
+var streamerList = ["freecodecamp", "storbeck", "ESL_CSGO", "habathcx","RobotCaleb", "noobs2ninjas", "FinalBossTV", "Slootbag", "JoshOG"];
 var streamer = "freecodecamp";
 var streamLink = "www.twitch.tv/";
 var $online = $('.online-streams');
@@ -15,7 +15,7 @@ function getInfo(streamName){
 		success: function(data){
 			console.log(data);
 			if (data.status === 404){
-				$offline.append('<div class="stream-off stream-stat"><span class="stream-icon fa fa-question"></span><p class="name">' + streamName + '</p></div>');
+				$offline.append('<div class="stream-off stream-stat"><img src="http://publicdomainvectors.org/photos/mono-gnome-question.png" class="stream-icon"><p class="name">' + streamName + '</p><div class="stream-info"><p class="stream-info">Does Not Exist</p></div></div>');
 			} else if (data.stream == null){
 				offlineCall(streamName);
 			} else {
@@ -40,24 +40,33 @@ function offlineCall(streamName){
 }
 
 function offlineStream(streamData, streamName){
-	$offline.append('<div class="stream-off stream-stat"><img src="' + streamData.logo + '" class="stream-icon"><a href="' + streamLink + streamName + ' class="name">' + streamName + '</a> </div>');
+	$offline.append('<div class="stream-off stream-stat"><img src="' + streamData.logo + '" class="stream-icon"><a href="' + streamLink + streamName + ' class="name">' + streamName + '</a><span class="delete-stream fa fa-times"></span><span class="stream-status status-off"></span><div class="stream-info"><p class="stream-info">Offline</p></div></div>');
 }
 
 function onlineStream(streamData, streamName){
-	$online.append('<div class="stream-on stream-stat"><img src="' + streamData.stream.channel.logo + '" class="stream-icon"><a href="' + streamLink + streamName + ' class="name">' + streamName + '</a> </div>');
+	$online.append('<div class="stream-on stream-stat"><div class="stream-title"><img src="' + streamData.stream.channel.logo + '" class="stream-icon"><a href="' + streamLink + streamName + ' class="name">' + streamName + '</a><span class="delete-stream fa fa-times"></span><span class="stream-status status-on"></span></div><div class="stream-info"><p class="stream-info">' + streamData.stream.channel.game + '</p></div></div>');
 }
 
 $('.live').on('click', function(){
 	$('.offline-streams').addClass('hide-it');
 	$('.online-streams').removeClass('hide-it');
-})
+});
 
 $('.off').on('click', function(){
 	$('.offline-streams').removeClass('hide-it');
 	$('.online-streams').addClass('hide-it');
-})
+});
 
 $('.all').on('click', function(){
 	$('.offline-streams').removeClass('hide-it');
 	$('.online-streams').removeClass('hide-it');
-})
+});
+
+function addStream(streamName){
+	streamer = $('.add-stream').val();
+	getInfo(streamer);
+}
+
+$('.delete-stream').on('click', function(){
+	console.log('deleted');
+});
