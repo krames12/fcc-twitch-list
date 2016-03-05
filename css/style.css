@@ -1,5 +1,6 @@
 body {
 	font-family: 'Arimo', sans-serif;
+	background-color: #333333;
 }
 
 .container {
@@ -15,6 +16,7 @@ body {
 	padding: 0;
 	margin: auto;
 	display: table;
+	border-bottom: 1px solid #ecf0f1;
 }
 
 .stream-menu li {
@@ -28,32 +30,32 @@ body {
 }
 
 .stream-menu li:hover {
-	background-color: grey;
+	background-color: #6441a5;
+	color: white;
 }
 
 .add {
 	display: inline-block;
 	width: 100%;
 	padding: 10px;
+	background-color: white;
 }
 
 .add-stream {
 	width: 100%;
 	padding: 5px;
 	border-radius: 20px;
-	border: 1px solid black;
+	border: 1px solid #ecf0f1;
 }
 
-.stream-container {
-	padding: 0;
-}
+
 
 .stream-stat {
 	background-color: white;
 }
 
 .stream-on, .stream-off {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #ecf0f1;
 	padding: 10px;
 }
 
