@@ -43,12 +43,11 @@ body {
 
 .add-stream {
 	width: 100%;
-	padding: 5px;
+	padding: 10px;
+	font-size: 1.2em;
 	border-radius: 20px;
 	border: 1px solid #ecf0f1;
 }
-
-
 
 .stream-stat {
 	background-color: white;
@@ -108,6 +107,42 @@ body {
 
 .hide-it {
 	display: none;
+}
+
+footer {
+	text-align: center;
+	margin-top: 20px;
+	color: white;
+}
+
+footer a, footer a:hover {
+	text-decoration: none;
+}
+
+.shameless {
+	color: white;
+	transition: all 0.1s ease-in-out;
+}
+
+.shameless:hover {
+	color: white;
+}
+
+.icon {
+	margin: 5px;
+	transition: all 0.1s ease-in-out;
+}
+
+.icon:hover {
+	transform: scale(1.2);
+}
+
+.twitter-icon, .twitter-icon:hover {
+	color: #00aced;
+}
+
+.github-icon, .github-icon:hover {
+	color: white;
 }
 
 /*Animations*/

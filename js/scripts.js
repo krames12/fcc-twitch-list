@@ -1,4 +1,4 @@
-var streamerList = ["freecodecamp", "storbeck", "ESL_CSGO", "habathcx","RobotCaleb", "noobs2ninjas", "FinalBossTV", "Slootbag", "JoshOG"];
+var streamerList = ["freecodecamp", "sodapoppin", "ESL_CSGO", "BrutallStatic", "Zfg1", "noobs2ninjas", "FinalBossTV", "Slootbag", "JoshOG"];
 var streamer = "freecodecamp";
 var streamLink = "www.twitch.tv/";
 var $online = $('.online-streams');
@@ -15,7 +15,7 @@ function getInfo(streamName){
 		success: function(data){
 			console.log(data);
 			if (data.status === 404){
-				$offline.append('<div class="stream-off stream-stat"><img src="http://publicdomainvectors.org/photos/mono-gnome-question.png" class="stream-icon"><p class="name">' + streamName + '</p>d<div class="stream-info"><p class="stream-info">Does Not Exist</p></div></div>');
+				$offline.append('<div class="stream-off stream-stat"><img src="http://publicdomainvectors.org/photos/mono-gnome-question.png" class="stream-icon"><p class="name">' + streamName + '</p><span class="delete-stream fa fa-times"></span><div class="stream-info"><p class="stream-info">Does Not Exist</p></div></div>');
 			} else if (data.stream == null){
 				offlineCall(streamName);
 			} else {
